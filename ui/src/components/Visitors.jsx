@@ -1,6 +1,6 @@
 import { useEffect,useState } from 'react'
 
-var API = "127.0.0.1:3005"
+const API = "http://127.0.0.1:8000"
 
 export default function Visitors () {
 
@@ -8,9 +8,10 @@ export default function Visitors () {
 
     useEffect(()=>{
         async function getCount() {
-            var response = await fetch('http://${API_URL}/visitors');
+            var response = await fetch(`${API}/visitors`);
             let data = await response.json();
-            setCount(data)
+            
+            setCount(data.visitorcount)
         }
         getCount();
     },[]);

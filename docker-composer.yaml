@@ -1,0 +1,33 @@
+services:
+  # mongodb:
+  #   image : mongodb/mongodb-community-server:latest
+  #   container_name : mongodb
+  #   ports:
+  #     - 27017:27017
+  #   volumes:
+  #     # named volumes
+  #     - mongo_volume:/data/db         
+  #     - ./python-api/db/mongo_init.py:/docker-entrypoint-initdb.d/mongo_init.py
+  python-api:
+    image: fastapi-app
+    container_name: fastapi-api
+    # depends_on:
+    #   - mongodb
+    
+    build:
+      context: python-api 
+      dockerfile: ./Dockerfile
+    expose: 
+      - 8000:8000
+  ui:
+    image: ui
+    container_name: ui
+    depends_on:
+      - python-api
+    build:
+      context: ui
+      dockerfile: ./Dockerfile
+    expose:
+      - 5173:5173
+volumes : 
+  mongo_volume :

@@ -1,0 +1,13 @@
+# Ignore Python virtual environments
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore development files
+*.log
+*.sqlite3
+.env
+.env.local
+.DS_Store
