@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: python-api
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi[standard]>=0.115.11
+Requires-Dist: motor>=3.7.0
