@@ -8,7 +8,7 @@ class Database:
 
     async def connect(self):
         try:
-            self.client = AsyncIOMotorClient("mongodb://mongodb/deb")  # Same DB URL as in JS
+            self.client = AsyncIOMotorClient("mongodb://mongodb:27017/deb")  # Same DB URL as in JS
             self.db = self.client["deb"]
             print("✅ Connected to database :)")
         except Exception as e:

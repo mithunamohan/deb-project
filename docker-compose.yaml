@@ -2,7 +2,7 @@ services:
   mongodb:
     image : mongo
     container_name : mongodb
-    ports:
+    expose:
       - 27017:27017
     volumes:
       # named volumes
